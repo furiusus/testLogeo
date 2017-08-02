@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prueba Test de logeo y Busqueda</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="vendor/materialize-0.98.1/css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script type="text/javascript" src="vendor/angular-1.6/angular.min.js"></script>
+    <script type="text/javascript" src="vendor/jquery-3.2.0/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" src="vendor/materialize-0.98.1/js/materialize.min.js"></script>
+
+    <script type="text/javascript" src="app/js/app.js"></script>
+    <script type="text/javascript" src="app/js/controlador/controller.js"></script>
+</head>
+<body ng-app="Aplicacion" ng-controller="MyController">
+    <div ng-show="pagina==1">
+    <div class="container">
+        <div class="row">
+            <div class="col s2"></div>
+            <div class="col s8">
+                <p style="font-size: 40px;font-family: KacstArt;">Validar Datos</p>
+                <div class="input-field">
+                    <input id="usr" type="text" class="validate" ng-model="idUsuario">
+                    <label for="usr">Usuario</label>
+                </div>
+                <div class="input-field">
+                    <input id="pass" type="text" class="validate" ng-model="passUsuario">
+                    <label for="pass">Password</label>
+                </div>
+                <div class="btn" ng-click="validarUsuario()">Entrar</div>
+                {{mensaje}}
+            </div>
+            <div class="col s2"></div>
+        </div>
+    </div>
+    </div>
+<div ng-show="pagina==2">
+    <table class="striped">
+        <thead>
+        <tr>
+            <th>Usuario</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Correo</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="usuario in usuarios">
+            <td>{{usuario.nombre}}</td>
+            <td>{{usuario.usuario}}</td>
+            <td>{{usuario.apellido}}</td>
+            <td>{{usuario.correo}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
